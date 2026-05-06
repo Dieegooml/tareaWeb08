@@ -3,11 +3,12 @@ import cors from "cors";
 import db from "./models/index.js";
 import authRoutes from "./routes/auth.routes.js";
 import userRoutes from "./routes/user.routes.js";
+import "dotenv/config";
 
 const app = express();
 
 const corsOptions = {
-  origin: ["http://localhost:8080", "http://localhost:5173"],
+  origin: ["http://localhost:8080", "http://localhost:5173", process.env.FRONTEND_URL],
 };
 
 app.use(cors(corsOptions));
